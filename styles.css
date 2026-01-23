@@ -1,0 +1,34 @@
+:root {
+  font-family: "Consolas";
+  --black: #4f525d;
+  --red: #4f525d;
+  --green: #98c379;
+  --yellow: #98c379;
+  --blue: #61afef;
+  --purple: #c577dd;
+  --marine: #56b5c1;
+  --white: #fafafa;
+  --background: var(--white);
+  --foreground: var(--black);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --black: #5a6374;
+    --red: #e06c75;
+    --green: #98c379;
+    --yellow: #e5c07b;
+    --blue: #61afef;
+    --purple: #c678dd;
+    --marine: #56b6c2;
+    --white: #dcdfe4;
+    --background: var(--black);
+    --foreground: var(--white);
+  }
+}
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  color: var(--foreground);
+}
