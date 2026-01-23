@@ -7,8 +7,11 @@ const contentIds = [
 let currentHighlight = "";
 
 window.onload = function () {
-  AddButtonListenerByName("#summary", SummaryClick);
   AddButtonListenerByName("#header-title", HeaderClick);
+  AddButtonListenerByName("#summary", SummaryClick);
+  AddButtonListenerByName("#skills", SkillsClick);
+  AddButtonListenerByName("#projects", ProjectsClick);
+  AddButtonListenerByName("#education", EducationClick);
 };
 async function HeaderClick() {
   await TypeInTerminal("fastfetch");
@@ -23,6 +26,30 @@ async function SummaryClick() {
     CreateMiniNav();
     ChangeActiveHighlight("#summary");
     currentHighlight = "#summary";
+  }
+}
+async function SkillsClick() {
+  if (currentHighlight != "#skills") {
+    await TypeInTerminal("which skills");
+    CreateMiniNav();
+    ChangeActiveHighlight("#skills");
+    currentHighlight = "#skill";
+  }
+}
+async function ProjectsClick() {
+  if (currentHighlight != "#projects") {
+    await TypeInTerminal("ls ./projects");
+    CreateMiniNav();
+    ChangeActiveHighlight("#projects");
+    currentHighlight = "#projects";
+  }
+}
+async function EducationClick() {
+  if (currentHighlight != "#education") {
+    await TypeInTerminal("cat education");
+    CreateMiniNav();
+    ChangeActiveHighlight("#education");
+    currentHighlight = "#education";
   }
 }
 function AddButtonListenerByName(classOrId, func) {
