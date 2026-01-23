@@ -2,7 +2,7 @@
 :root {
   font-family: "Consolas";
   --black: #4f525d;
-  --red: #4f525d;
+  --red: #df6c75;
   --green: #98c379;
   --yellow: #98c379;
   --blue: #61afef;
@@ -12,6 +12,11 @@
   --background: var(--white);
   --foreground: var(--black);
   --alt-background: var(--marine);
+  --string-color: var(--blue);
+  --square-brace-color: var(--green);
+  --variable-color: var(--red);
+  --bracket-color: var(--yellow);
+  --function-color: var(--purple);
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -40,17 +45,19 @@ body {
   width: 100vw;
   overflow: hidden;
 }
+
 li {
   list-style-type: none;
 }
+
 li:hover {
-  color: var(--red);
+  color: var(--variable-color);
   scale: 1.1;
   cursor: pointer;
   transition: 0.5s ease-in-out;
   span {
     display: inline;
-    color: var(--green);
+    color: var(--square-brace-color);
   }
 }
 
@@ -62,6 +69,26 @@ li:hover {
   justify-content: center;
   align-items: center;
 }
+#header-title {
+  cursor: pointer;
+}
+#header-title:hover {
+  scale: 1.05;
+  transition: 0.5s ease-in-out;
+  .function-span {
+    color: var(--function-color);
+    transition: 0.5s ease-in-out;
+  }
+  .string-span {
+    color: var(--string-color);
+    transition: 0.5s ease-in-out;
+  }
+  .bracket-span {
+    color: var(--bracket-color);
+    transition: 0.5s ease-in-out;
+  }
+}
+
 /* navigation */
 .navigation-container {
   display: flex;
@@ -75,6 +102,7 @@ li:hover {
   display: flex;
   flex-direction: column;
   text-align: center;
+  align-items: center;
   gap: 2em;
   font-size: 24pt;
   width: 100%;
@@ -85,7 +113,10 @@ li:hover {
     display: none;
   }
 }
-
+.highlight-nav {
+  color: var(--green);
+  text-decoration: underline;
+}
 /* content */
 #terminal {
   background-color: var(--alt-background);
