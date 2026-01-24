@@ -14,9 +14,10 @@ window.onload = function () {
   AddButtonListenerByName("#education", EducationClick);
 };
 async function HeaderClick() {
-  await TypeInTerminal("fastfetch");
+  await TypeInTerminal("cd ~");
   ClearMiniNav();
   ClearNavHighlights();
+  HideAllExcept("");
   // reset all the divs
 }
 
@@ -26,6 +27,7 @@ async function SummaryClick() {
     CreateMiniNav();
     ChangeActiveHighlight("#summary");
     currentHighlight = "#summary";
+    HideAllExcept("summary");
   }
 }
 async function SkillsClick() {
@@ -34,6 +36,7 @@ async function SkillsClick() {
     CreateMiniNav();
     ChangeActiveHighlight("#skills");
     currentHighlight = "#skill";
+    HideAllExcept("skills");
   }
 }
 async function ProjectsClick() {
@@ -42,6 +45,7 @@ async function ProjectsClick() {
     CreateMiniNav();
     ChangeActiveHighlight("#projects");
     currentHighlight = "#projects";
+    HideAllExcept("projects");
   }
 }
 async function EducationClick() {
@@ -50,6 +54,22 @@ async function EducationClick() {
     CreateMiniNav();
     ChangeActiveHighlight("#education");
     currentHighlight = "#education";
+    HideAllExcept("education");
+  }
+}
+
+function HideAllExcept(idToUnHide) {
+  for (let i = 0; i < contentIds.length; i++) {
+    hideId = document.querySelector(`#${contentIds[i]}`);
+    if (hideId != null) {
+      if (contentIds[i] != `${idToUnHide}-content`) {
+        hideId.classList.add("hidden");
+        hideId.classList.remove("content-flex");
+      } else {
+        hideId.classList.remove("hidden");
+        hideId.classList.add("content-flex");
+      }
+    }
   }
 }
 function AddButtonListenerByName(classOrId, func) {
@@ -109,16 +129,16 @@ async function TypeInTerminal(textToType) {
 }
 async function TypeText(element, textToType) {
   for (let i = 0; i < 2; i++) {
-    await sleep(400);
+    await sleep(300);
     element.innerHTML = "|";
-    await sleep(400);
+    await sleep(300);
     element.innerHTML = "";
   }
   for (let i = 0; i < textToType.length; i++) {
-    await sleep(200);
+    await sleep(100);
     element.innerHTML = element.innerHTML + textToType[i];
   }
-  await sleep(300);
+  await sleep(200);
 }
 
 function sleep(ms) {
