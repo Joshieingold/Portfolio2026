@@ -98,6 +98,7 @@ function ChangeActiveHighlight(currentPage) {
 function CreateMiniNav() {
   let navElement = document.querySelector(".navigation-container");
   navElement.style.height = "5%";
+  navElement.style.backgroundColor = "var(--alt-background)";
   let navList = navElement.querySelector(".nav-list");
   navList.style.flexDirection = "row";
   navList.style.width = "100%";
@@ -110,6 +111,7 @@ function CreateMiniNav() {
 function ClearMiniNav() {
   navElement = document.querySelector(".navigation-container");
   navElement.style.height = "100%";
+  navElement.style.backgroundColor = "transparent";
   let navList = navElement.querySelector(".nav-list");
   navList.style.flexDirection = "column";
   navList.style.width = "100%";

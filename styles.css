@@ -1,40 +1,57 @@
 /* Root CSS */
 :root {
   font-family: "Consolas";
-  --black: #4f525d;
-  --red: #df6c75;
-  --green: #98c379;
-  --yellow: #98c379;
-  --blue: #61afef;
-  --purple: #c577dd;
-  --marine: #56b5c1;
-  --white: #fafafa;
+  --background: #e6e7ed;
+  --alt-background: #f2f3f7;
+  --black: #343b58;
+  --foreground: #343b58;
+  --white: #ffffff;
+  --text-muted: #40434f;
+  --comment: #6c6e75;
+  --red: #8c4351;
+  --orange: #965027;
+  --yellow: #8f5e15;
+  --green: #385f0d;
+  --teal: #33635c;
+  --cyan: #0f4b6e;
+  --blue: #2959aa;
+  --purple: #5a3e8e;
+  --magenta: #5a3e8e;
   --shadow:
     rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-  --background: var(--white);
-  --foreground: var(--black);
-  --alt-background: var(--marine);
-  --string-color: var(--blue);
-  --square-brace-color: var(--green);
-  --variable-color: var(--red);
+
+  --string-color: var(--green);
+  --number-color: var(--orange);
+  --keyword-color: var(--purple);
+  --function-color: var(--blue);
+  --variable-color: var(--black);
   --bracket-color: var(--yellow);
-  --function-color: var(--purple);
+  --square-brace-color: var(--yellow);
+  --comment-color: var(--comment);
 }
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --black: #5a6374;
-    --red: #e06c75;
-    --green: #98c379;
-    --yellow: #e5c07b;
-    --blue: #61afef;
-    --purple: #c678dd;
-    --marine: #56b6c2;
-    --white: #dcdfe4;
-    --background: var(--black);
-    --foreground: var(--white);
-    --alt-background: #282c34;
+    --black: #1a1b26;
+    --background: #24283b;
+    --alt-background: #1a1b26;
+
+    --foreground: #a9b1d6;
+    --white: #c0caf5;
+    --comment: #565f89;
+    --variable-color: var(--teal);
+
+    --red: #f7768e;
+    --orange: #ff9e64;
+    --yellow: #e0af68;
+    --green: #9ece6a;
+    --cyan: #7dcfff;
+    --blue: #7aa2f7;
+    --teal: #73daca;
+    --purple: #bb9af7;
+    --magenta: #bb9af7;
   }
   .link-icon {
     background-color: var(--background);
@@ -99,6 +116,7 @@ li:hover {
   user-select: none;
   background-color: var(--alt-background);
   height: 5%;
+  padding: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,19 +125,17 @@ li:hover {
   cursor: pointer;
 }
 #header-title:hover {
-  scale: 1.05;
-  transition: 0.5s ease-in-out;
   .function-span {
     color: var(--function-color);
-    transition: 0.5s ease-in-out;
+    transition: 0.2s ease-in-out;
   }
   .string-span {
     color: var(--string-color);
-    transition: 0.5s ease-in-out;
+    transition: 0.2s ease-in-out;
   }
   .bracket-span {
     color: var(--bracket-color);
-    transition: 0.5s ease-in-out;
+    transition: 0.2s ease-in-out;
   }
 }
 
@@ -151,7 +167,7 @@ li:hover {
   color: var(--green);
   text-decoration: underline;
 }
-/* content */
+/* terminal */
 #terminal {
   background-color: var(--black);
   color: var(--white);
