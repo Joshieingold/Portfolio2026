@@ -7,18 +7,38 @@ const contentIds = [
 let currentHighlight = "";
 
 window.onload = function () {
+  // Navbar Elements
   AddButtonListenerByName("#header-title", HeaderClick);
   AddButtonListenerByName("#summary", SummaryClick);
   AddButtonListenerByName("#skills", SkillsClick);
   AddButtonListenerByName("#projects", ProjectsClick);
   AddButtonListenerByName("#education", EducationClick);
+
+  // Skill terminals
+  AddButtonListenerByName("#expand-terminal-framework", FrameworkClick);
+  AddButtonListenerByName("#expand-terminal-tool", ToolClick);
+  AddButtonListenerByName("#expand-terminal-language", LanguageClick);
+  AddButtonListenerByName("#expand-terminal-technique", TechniqueClick);
+  AddButtonListenerByName("#exit-terminal", CollapseSkills);
 };
+
 async function HeaderClick() {
   await TypeInTerminal("cd ~");
   ClearMiniNav();
   ClearNavHighlights();
   HideAllExcept("");
-  // reset all the divs
+}
+async function FrameworkClick() {
+  PickSkill("framework-terminal");
+}
+async function ToolClick() {
+  PickSkill("tool-terminal");
+}
+async function LanguageClick() {
+  PickSkill("language-terminal");
+}
+async function TechniqueClick() {
+  PickSkill("technique-terminal");
 }
 
 async function SummaryClick() {
@@ -73,11 +93,13 @@ function HideAllExcept(idToUnHide) {
   }
 }
 function AddButtonListenerByName(classOrId, func) {
-  let targetElement = document.querySelector(classOrId);
+  let targetElement = document.querySelectorAll(classOrId);
   if (!targetElement) {
-    console.log("Add Button Failed!");
+    console.log("Add Button Failed!", classOrId);
   } else {
-    targetElement.addEventListener("click", func);
+    for (let i = 0; i < targetElement.length; i++) {
+      targetElement[i].addEventListener("click", func);
+    }
   }
 }
 function ClearNavHighlights() {
@@ -131,18 +153,44 @@ async function TypeInTerminal(textToType) {
 }
 async function TypeText(element, textToType) {
   for (let i = 0; i < 2; i++) {
-    await sleep(300);
+    await Sleep(300);
     element.innerHTML = "|";
-    await sleep(300);
+    await Sleep(300);
     element.innerHTML = "";
   }
   for (let i = 0; i < textToType.length; i++) {
-    await sleep(100);
+    await Sleep(100);
     element.innerHTML = element.innerHTML + textToType[i];
   }
-  await sleep(200);
+  await Sleep(200);
+}
+function GenerateBoxData(skillId) {
+  return;
 }
 
-function sleep(ms) {
+function PickSkill(skillId) {
+  let allBoxes = document.querySelectorAll(".skill-box-wrapper");
+  for (let i = 0; i < allBoxes.length; i++) {
+    if (allBoxes[i].id === skillId) {
+      let targetBox = allBoxes[i];
+      targetBox.style.width = "100%";
+      targetBox.style.height = "100%";
+
+      GenerateBoxData(skillId);
+    } else {
+      allBoxes[i].style.display = "none";
+    }
+  }
+}
+function CollapseSkills() {
+  let allConsoles = document.querySelectorAll(".skill-box-wrapper");
+  for (let i = 0; i < allConsoles.length; i++) {
+    let currentConsole = allConsoles[i];
+    currentConsole.style.width = "15%";
+    currentConsole.style.height = "50%";
+    currentConsole.style.display = "flex";
+  }
+}
+function Sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }

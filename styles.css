@@ -4,6 +4,7 @@
   --background: #e6e7ed;
   --alt-background: #f2f3f7;
   --black: #343b58;
+  --alt-black: #1a1b26;
   --foreground: #343b58;
   --white: #ffffff;
   --text-muted: #40434f;
@@ -240,4 +241,82 @@ li:hover {
 .link-icon:hover {
   transform: translateY(-2px);
   background-color: var(--function-color);
+}
+
+/* Skills */
+#skills-content {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.skill-box-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 95%;
+  height: 80%;
+  padding: 10px;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-around;
+}
+.skill-box-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background);
+  border: 2px solid var(--foreground);
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: var(--shadow);
+  align-items: center;
+  width: 15%;
+  height: 50%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+  user-select: none;
+}
+.mini-nav {
+  box-sizing: border-box;
+  display: flex;
+  text-align: center;
+  background-color: var(--black);
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+.terminal-name {
+  width: 95%;
+  text-align: left;
+  color: var(--white);
+}
+.button {
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  border-radius: 7px;
+  color: var(--white);
+  transition: 0.2s ease-in-out;
+  box-shadow: var(--shadow);
+}
+.button-container {
+  display: flex;
+  gap: 3px;
+}
+.exit {
+  background-color: var(--red);
+}
+.expand {
+  background-color: var(--blue);
+}
+.button:hover {
+  transform: translateY(-2px);
+  color: var(--white);
 }
