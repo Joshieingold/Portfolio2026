@@ -5,6 +5,7 @@ const contentIds = [
     "education-content",
 ];
 let currentHighlight = "";
+let loadedSkillsData;
 
 window.onload = function () {
     // Navbar Elements
@@ -21,6 +22,11 @@ window.onload = function () {
     AddButtonListenerByName("#expand-terminal-technique", TechniqueClick);
     AddButtonListenerByName("#exit-terminal", CollapseSkills);
 };
+async function LoadSkills() {
+    const response = await fetch("./skills.json");
+    loadedSkillsData = await response.json();
+    console.log("Skills loaded:", loadedSkillsData);
+}
 
 async function HeaderClick() {
     await TypeInTerminal("cd ~");
@@ -57,6 +63,7 @@ async function SkillsClick() {
         ChangeActiveHighlight("#skills");
         currentHighlight = "#skill";
         HideAllExcept("skills");
+        await LoadSkills();
     }
 }
 async function ProjectsClick() {
@@ -165,7 +172,31 @@ async function TypeText(element, textToType) {
     await Sleep(200);
 }
 function GenerateBoxData(skillId) {
+    switch (skillId) {
+        case "language-terminal":
+            GenerateLangaugeTerminalData();
+    }
     return;
+}
+function GenerateLangaugeTerminalData() {
+    console.log("hit");
+    const TEXTAREA = document
+        .querySelector("#language-terminal")
+        .querySelector(".skill-box");
+    let html = "";
+    for (let i = 0; i < loadedSkillsData.languages.length; i++) {
+        let currentLang = loadedSkillsData.languages[i];
+        html += `<h3>${currentLang.header}</h3>`;
+        if (currentLang.starter !== "") {
+            html += `<p>${currentLang.starter}</p>`;
+        }
+        html += `<p>${currentLang.text}</p>`;
+        if (currentLang.ender !== "") {
+            html += `<p>${currentLang.ender}</p>`;
+        }
+        html += "<br>";
+    }
+    TEXTAREA.innerHTML = html;
 }
 
 function PickSkill(skillId) {
@@ -174,7 +205,7 @@ function PickSkill(skillId) {
         if (allBoxes[i].id === skillId) {
             let targetBox = allBoxes[i];
             targetBox.style.width = "100%";
-            targetBox.style.height = "100%";
+            targetBox.style.height = "85%";
 
             GenerateBoxData(skillId);
         } else {
@@ -198,7 +229,7 @@ async function CollapseSkills() {
     await Sleep(200);
     for (let j = 0; j < allConsoles.length; j++) {
         let currentConsole = allConsoles[j];
-        currentConsole.style.opacity = "100";
+        currentConsole.style.opacity = "1";
     }
 }
 function Sleep(ms) {

@@ -1,5 +1,5 @@
 {
-    "languges": [
+    "languages": [
         {
             "language": "Python",
             "header": "def Python:",
@@ -23,10 +23,10 @@
         },
         {
             "language": "HTML",
-            "header": "<HTML>",
+            "header": "&lt;HTML&gt;",
             "starter": "",
             "text": "HTML is the backbone of every website I build. I have a strong understanding of semantic markup, accessibility standards, and structuring content for clarity and SEO. I use HTML to create clean, organized layouts that serve as a reliable foundation for CSS and JavaScript enhancements.",
-            "ender": "</HTML>"
+            "ender": "&lt;/HTML&gt;"
         },
         {
             "language": "CSS",

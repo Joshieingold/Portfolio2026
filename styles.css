@@ -260,6 +260,15 @@ li:hover {
     align-items: center;
     justify-content: space-around;
 }
+.skill-box {
+    justify-content: left;
+    align-items: left;
+    text-align: left;
+    padding: 10px;
+    overflow-y: scroll;
+    cursor: auto;
+    user-select: text;
+}
 .skill-box-wrapper {
     display: flex;
     flex-direction: column;
