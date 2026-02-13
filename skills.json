@@ -1,0 +1,67 @@
+{
+    "languges": [
+        {
+            "language": "Python",
+            "header": "def Python:",
+            "starter": "",
+            "text": "Python was my first programming language and remains one of my strongest. I primarily use it for data analysis, automation scripts, and solving complex algorithmic problems. I am comfortable with libraries like pandas, NumPy, and matplotlib, and I often leverage Python to prototype projects quickly or handle real-world data challenges.",
+            "ender": ""
+        },
+        {
+            "language": "C#",
+            "header": "public string C#()",
+            "starter": "{",
+            "text": "C# is my go-to language for developing robust, production-level applications. I have experience building desktop applications, automating workflows, and structuring large-scale projects with clean, maintainable code. Its object-oriented features and integration with .NET make it ideal for professional-grade software.",
+            "ender": "}"
+        },
+        {
+            "language": "JavaScript",
+            "header": "function JavaScript() {",
+            "starter": "",
+            "text": "JavaScript is essential for modern web development, and I am proficient in writing efficient, readable, and maintainable code. I have used it to create interactive web applications, implement dynamic UI features, and follow best practices such as ES6+ syntax, asynchronous programming, and modular design. My formal education and practical projects ensure solid competence with JavaScript.",
+            "ender": "}"
+        },
+        {
+            "language": "HTML",
+            "header": "<HTML>",
+            "starter": "",
+            "text": "HTML is the backbone of every website I build. I have a strong understanding of semantic markup, accessibility standards, and structuring content for clarity and SEO. I use HTML to create clean, organized layouts that serve as a reliable foundation for CSS and JavaScript enhancements.",
+            "ender": "</HTML>"
+        },
+        {
+            "language": "CSS",
+            "header": ".css {",
+            "starter": "",
+            "text": "CSS allows me to transform HTML structures into visually appealing, responsive designs. I am proficient in flexbox, grid, animations, and responsive media queries. I focus on writing clean, maintainable styles and strive to create polished UI experiences that are consistent across browsers and devices.",
+            "ender": "}"
+        },
+        {
+            "language": "Bash",
+            "header": "function Bash {",
+            "starter": "",
+            "text": "I use Bash and the terminal extensively for automation, system management, and scripting tasks. I am comfortable writing scripts to automate repetitive workflows, manage files, and interact with Linux environments. While I’m still exploring advanced shell scripting techniques, I am confident in using Bash for practical, efficient solutions.",
+            "ender": "}"
+        },
+        {
+            "language": "SQL",
+            "header": "CREATE FUNCTION MySQL()",
+            "starter": "RETURNS STRING",
+            "text": "I have experience with relational databases like MySQL, writing queries, designing schemas, and optimizing data retrieval. Additionally, I have explored NoSQL databases such as Firebase, giving me flexibility in handling structured and unstructured data. I enjoy structuring data efficiently and ensuring the integrity and performance of database-driven applications.",
+            "ender": "END;"
+        },
+        {
+            "language": "Java",
+            "header": "public static void Java(String[] args) {",
+            "starter": "",
+            "text": "Java is a language I enjoy for building object-oriented applications and experimenting with cross-platform solutions. I have implemented small projects, such as console apps and simple GUIs, and appreciate Java’s structured approach to software development. Its versatility makes it an excellent alternative to C# for production-level work.",
+            "ender": "};"
+        },
+        {
+            "language": "Go",
+            "header": "func Go() {",
+            "starter": "",
+            "text": "Go is a language I explored for its speed, simplicity, and concurrency support. I built my first useful CLI tool in Go, which searches websites efficiently from the terminal. While my experience is limited compared to other languages, I enjoy Go’s clarity and its suitability for high-performance applications and networked services.",
+            "ender": "}"
+        }
+    ]
+}
