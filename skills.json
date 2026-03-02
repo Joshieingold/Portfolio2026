@@ -63,5 +63,11 @@
             "text": "Go is a language I explored for its speed, simplicity, and concurrency support. I built my first useful CLI tool in Go, which searches websites efficiently from the terminal. While my experience is limited compared to other languages, I enjoy Go’s clarity and its suitability for high-performance applications and networked services.",
             "ender": "}"
         }
+    ],
+    "tools": [
+        {
+            "tool-name": "NeoVim",
+            "description": "NeoVim is my main text editor. It allows me to quickly and easily edit code in my own personallized environment. I have setup a configuration file on my github that is "
+        }
     ]
 }
